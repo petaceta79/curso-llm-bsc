@@ -50,7 +50,7 @@ async function sendMessage() {
     
     try {
         // 3. Llamada al backend
-        const response = await fetch('http://127.0.0.1:8000/chat', {
+        const response = await fetch('http://127.0.0.1:6661/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ messages: messages })
