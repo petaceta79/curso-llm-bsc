@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASY-CHATGPT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <main class="chat-window">
+            <div id="chat-container"></div>
+            <div class="input-area">
+                <input type="file" id="image-input" accept="image/*" multiple style="max-width: 220px;">
+                <button id="clear-img-btn" style="display: none; background: transparent; border: none; cursor: pointer;" title="Quitar imágenes">❌</button>
+                
+                <input type="text" id="user-input" placeholder="Escribe un mensaje...">
+                <button id="send-btn">Enviar</button>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h2>Context View</h2>
+            <div class="token-stats">
+                <p>Prompt Tokens: <span id="prompt-tokens">-</span></p>
+                <p>Completion Tokens: <span id="completion-tokens">-</span></p>
+                <p>Total Tokens: <span id="total-tokens">-</span></p>
+            </div>
+            <h3>Context JSON</h3>
+            <pre id="context-json">[]</pre>
+        </aside>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

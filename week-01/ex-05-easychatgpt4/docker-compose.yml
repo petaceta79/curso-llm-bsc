@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    ports:
+      - "6661:8000"  # Puerto especial 6661 solicitado
+    env_file:
+      - .env
+    volumes:
+      - .:/app

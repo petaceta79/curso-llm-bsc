@@ -1,0 +1,18 @@
+[
+    {
+        "role": "user",
+        "content": "Hi"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello! How can I help you today? 😊"
+    },
+    {
+        "role": "user",
+        "content": "How are tou?"
+    },
+    {
+        "role": "assistant",
+        "content": "I'm just a bunch of code, so I don't have feelings—but I'm *functioning perfectly* and ready to help you! How about you? How’s your day going? 😊\n\n(Or were you just testing if I’d say \"I'm fine, thanks\"? 😄)"
+    }
+]

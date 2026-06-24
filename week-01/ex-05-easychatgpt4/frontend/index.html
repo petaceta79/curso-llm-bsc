@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASY-CHATGPT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <main class="chat-window">
+            <div id="chat-container"></div>
+            <div class="input-area">
+                <input type="file" id="image-input" accept="image/*" multiple style="max-width: 220px;">
+                <button id="clear-img-btn" style="display: none; background: transparent; border: none; cursor: pointer;" title="Quitar imágenes">❌</button>
+                
+                <input type="text" id="user-input" placeholder="Escribe un mensaje...">
+                <button id="send-btn">Enviar</button>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="user-controls" style="margin-bottom: 20px; padding: 10px; background: #f0f0f0; border-radius: 8px;">
+                <div style="position: relative; margin-bottom: 5px;">
+                    <input type="text" id="username-input" list="saved-users-list" placeholder="Nombre de usuario..." style="width: 100%; box-sizing: border-box; padding-right: 25px;">
+                    
+                    <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); pointer-events: none; font-size: 12px; color: #888;">
+                        ▼
+                    </div>
+                </div>
+                <datalist id="saved-users-list"></datalist>
+                <button id="save-btn" style="width: 48%;">Guardar</button>
+                <button id="load-btn" style="width: 48%;">Cargar</button>
+            </div>
+            <h2>Context View</h2>
+            <div class="token-stats">
+                <p>Prompt Tokens: <span id="prompt-tokens">-</span></p>
+                <p>Completion Tokens: <span id="completion-tokens">-</span></p>
+                <p>Total Tokens: <span id="total-tokens">-</span></p>
+            </div>
+            <h3>Context JSON</h3>
+            <pre id="context-json">[]</pre>
+        </aside>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
