@@ -35,11 +35,14 @@ try:
     if not mensajes: mensajes = soup.find_all('div', class_='forumpost')
     
     ultimo_mensaje = mensajes[-1]
-    texto_ultimo_mensaje = ultimo_mensaje.get_text(separator=' ', strip=True)
 
-    # EL SALVAVIDAS: Si tu nombre está en la cabecera del último mensaje, no hacemos nada.
-    if mi_nombre.lower() in texto_ultimo_mensaje[:150].lower():
+    autor_tag = ultimo_mensaje.find('a', href=lambda h: h and '/user/view.php' in h)
+
+    if autor_tag and mi_nombre.lower() in autor_tag.get_text(strip=True).lower():
         print(f"El último mensaje ya es tuyo ({mi_nombre}). Entrando en reposo para evitar bucles.")
+        exit()
+    elif not autor_tag:
+        print("Advertencia: no se pudo identificar el autor del último mensaje. Cancelando por seguridad.")
         exit()
 
     # Construimos el guion de la conversación para la memoria de la IA

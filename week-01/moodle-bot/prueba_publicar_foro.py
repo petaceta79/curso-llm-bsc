@@ -72,17 +72,22 @@ try:
         print(f"  [{i+1}] {texto[:100]}...")
 
     ultimo_mensaje = mensajes[-1]
-    texto_ultimo_mensaje = ultimo_mensaje.get_text(separator=' ', strip=True)
 
     # 2. Evaluación de parada (Freno de emergencia)
     print("\nEVALUANDO FRENO DE EMERGENCIA:")
     print(f"  - Buscando autor: '{mi_nombre}'")
-    print(f"  - Cabecera del último mensaje: '{texto_ultimo_mensaje[:100]}...'")
-    
-    if mi_nombre.lower() in texto_ultimo_mensaje[:150].lower():
-        print(f"RESULTADO: ¡ALERTA! El último mensaje es tuyo. El script en producción se DETENDRÍA aquí.")
+
+    autor_tag = ultimo_mensaje.find('a', href=lambda h: h and '/user/view.php' in h)
+
+    if not autor_tag:
+        print("RESULTADO: No se pudo identificar el autor. El script en producción se DETENDRÍA aquí.")
     else:
-        print(f"RESULTADO: Vía libre. El último mensaje NO es tuyo.")
+        autor_nombre = autor_tag.get_text(strip=True)
+        print(f"  - Autor detectado: '{autor_nombre}'")
+        if mi_nombre.lower() in autor_nombre.lower():
+            print("RESULTADO: ¡ALERTA! El último mensaje es tuyo. El script en producción se DETENDRÍA aquí.")
+        else:
+            print("RESULTADO: Vía libre. El último mensaje NO es tuyo.")
 
     # 3. Extracción de Llaves
     enlace_respuesta = ultimo_mensaje.find('a', href=lambda href: href and 'post.php?reply=' in href)
