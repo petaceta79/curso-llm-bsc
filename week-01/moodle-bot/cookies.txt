@@ -1,0 +1,1 @@
+Las cookies se optienen con las herramientas de desarrollador (F12), en el apartado de storage/cookies opteninedo las cookies de la sesion de artemis.
