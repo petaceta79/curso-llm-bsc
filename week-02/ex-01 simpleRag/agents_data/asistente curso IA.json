@@ -1,0 +1,5 @@
+{
+    "systemPrompt": "Eres un experto en IA, contesta las preguntas basándote unicamente en el contexto:",
+    "template": "Contexto del documento:\r\n{context}\r\n\r\nPregunta del usuario:\r\n{user_input}\r\n\r\nRespuesta:",
+    "contextText": "La capital de españa es madrid. La capital de francia es paris."
+}

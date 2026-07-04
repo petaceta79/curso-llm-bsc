@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASY-CHATGPT - Agent Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div id="setup-screen" class="setup-container">
+        <h1 style="text-align: center; color: #202123;">Agent Builder (simple RAG)</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 20px;">Crea un nuevo agente o carga uno existente.</p>
+        
+        <div class="form-group">
+            <label for="agent-name">Nombre del Agente:</label>
+            <input type="text" id="agent-name" placeholder="Ej: Asistente Legal de Contratos">
+        </div>
+
+        <div class="form-group">
+            <label for="system-prompt">System Prompt:</label>
+            <textarea id="system-prompt" placeholder="Ej: Eres un experto en leyes. Responde basándote solo en el contexto provisto."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="prompt-template">Prompt Template (Obligatorio: {context} y {user_input}):</label>
+            <textarea id="prompt-template">Contexto del documento:
+{context}
+
+Pregunta del usuario:
+{user_input}
+
+Respuesta:</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="context-file">Contexto del Agente (Sube un archivo .txt):</label>
+            <input type="file" id="context-file">
+        </div>
+
+        <div class="actions">
+            <button id="create-agent-btn" class="primary-btn">Crear Agente</button>
+        </div>
+
+        <hr style="margin: 30px 0; border: 0; border-top: 1px solid #ddd;">
+
+        <div class="actions" style="text-align: center;">
+            <label for="load-agent-file" class="secondary-btn">Cargar Agente (.agente)</label>
+            <input type="file" id="load-agent-file" accept=".agente" style="display: none;">
+        </div>
+    </div>
+
+    <div id="chat-screen" class="container" style="display: none;">
+        <main class="chat-window">
+            <div class="chat-header">
+                <h2 id="chat-agent-name">Nombre del Agente</h2>
+                <button id="back-btn" class="secondary-btn" style="padding: 5px 10px; font-size: 12px;">Volver</button>
+            </div>
+
+            <div id="chat-container"></div>
+            
+            <div class="input-area">
+                <input type="file" id="image-input" accept="image/*" multiple style="max-width: 220px;">
+                <button id="clear-img-btn" style="display: none; background: transparent; border: none; cursor: pointer;" title="Quitar imágenes">❌</button>
+                
+                <input type="text" id="user-input" placeholder="Escribe un mensaje...">
+                <button id="send-btn" class="primary-btn">Enviar</button>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="user-controls" style="margin-bottom: 20px;">
+                <button id="save-agent-btn" class="primary-btn" style="width: 100%; background-color: #10a37f;">💾 Descargar Agente (.agente)</button>
+            </div>
+            <h2>Context View</h2>
+            <div class="token-stats">
+                <p>Prompt Tokens: <span id="prompt-tokens">-</span></p>
+                <p>Completion Tokens: <span id="completion-tokens">-</span></p>
+                <p>Total Tokens: <span id="total-tokens">-</span></p>
+            </div>
+            <h3>What was actually sent:</h3>
+            <pre id="context-json">Esperando interacción...</pre>
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

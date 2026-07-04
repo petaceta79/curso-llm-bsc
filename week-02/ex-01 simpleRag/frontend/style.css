@@ -1,0 +1,199 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef; /* Fondo grisáceo para que resalte la caja de setup */
+}
+
+/* Pantalla de Setup */
+.setup-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.primary-btn {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+}
+
+.primary-btn:hover { background-color: #0056b3; }
+
+.secondary-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.secondary-btn:hover { background-color: #5a6268; }
+
+/* Ajustes del contenedor del chat */
+.container {
+    display: flex;
+    height: 100vh;
+    background: white;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+#chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+.assistant {
+    align-self: flex-start;
+    background-color: #e9e9eb;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+.input-area {
+    display: flex;
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #ddd;
+    gap: 10px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.sidebar {
+    width: 380px;
+    background-color: #202123;
+    color: #ececf1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    overflow-y: auto;
+}
+
+.token-stats {
+    background: #343541;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #4d4d4f;
+}
+
+.token-stats p { margin: 8px 0; font-size: 14px; }
+.token-stats span { float: right; font-weight: bold; color: #10a37f; }
+
+#context-json {
+    background: #000;
+    color: #00ff00;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    flex: 1;
+    border: 1px solid #444;
+    overflow-y: auto;
+}
+
+/* Ajuste específico para el botón de enviar del chat */
+#send-btn {
+    width: auto; /* Anula el 100% que hereda de la clase primary-btn */
+    min-width: 120px; /* Le da un tamaño fijo razonable */
+    flex-shrink: 0; /* Evita que el botón se encoja si escribes mucho texto */
+}
+
+/* Nos aseguramos de que el input de texto se expanda al máximo */
+#user-input {
+    flex: 1; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
