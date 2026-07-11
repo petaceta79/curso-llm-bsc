@@ -1,0 +1,14 @@
+[project]
+name = "collections-explorer"
+version = "0.1.0"
+description = "Poke an embeddings collection: add chunks with metadata, query by meaning — built on the course's collections-manager utility"
+license = "CC-BY-NC-SA-4.0"
+requires-python = ">=3.10"
+dependencies = [
+    "collections-manager",
+    "rich>=13.0",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.uv.sources]
+collections-manager = { path = "../../collections-manager", editable = true }

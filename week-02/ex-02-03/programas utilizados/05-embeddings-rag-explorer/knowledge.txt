@@ -1,0 +1,71 @@
+Acme Robotics is a fictional company founded in 2019 in Girona, Catalonia. It
+designs and manufactures small autonomous warehouse robots. Its headquarters are
+in Girona, with a second assembly plant in Lleida opened in 2023.
+
+The flagship product is the Pallet Pup, a knee-high mobile robot that ferries
+pallets between shelving and loading docks. The Pallet Pup has a top speed of 2.4
+metres per second and a payload capacity of 600 kilograms. Its battery lasts nine
+hours on a single charge and recharges to full in about 90 minutes.
+
+The Pallet Pup finds its way using LiDAR together with floor markers, and it runs
+on an in-house operating system called PupOS. PupOS receives an over-the-air
+update roughly once a month, and every update is signed so a robot will refuse
+firmware that is not from Acme.
+
+Acme's second product is the Shelf Owl, a small camera drone that flies the aisles
+at night and counts stock on the shelves. The Shelf Owl shares the PupOS software
+stack with the Pallet Pup, which is why a warehouse can manage both from one
+dashboard. A Shelf Owl flies for 35 minutes per charge, photographs about 1,800
+shelf locations per night, and lands itself on its charging perch when the battery
+drops below 15 percent.
+
+The third product is the Nest, a floor-level fast-charging dock. A Pallet Pup that
+docks on a Nest reaches 80 percent charge in 25 minutes, and a warehouse typically
+installs one Nest for every four robots.
+
+Acme Robotics employs 140 people. Its CEO is Berta Comas, a former logistics
+engineer who co-founded the company. The head of engineering is Nil Bass. The
+company's motto is "small robots, heavy lifting."
+
+In 2024 Acme shipped 3,200 Pallet Pup units, mostly to fruit and textile
+warehouses across southern Europe. Italy and the south of France were the two
+largest markets that year.
+
+A typical installation takes two days: one day to glue and calibrate the floor
+markers, and one day for the robots to map the aisles and rehearse their routes at
+low speed. No changes to shelving are needed, and the warehouse keeps operating
+during the install.
+
+Acme's largest deployment is a citrus warehouse near Valencia, where a fleet of 46
+Pallet Pups and 6 Shelf Owls moves about 900 pallets per day in the picking
+season. The fleet there replaced two diesel forklifts, and the customer reports
+that picking errors dropped by a third in the first year.
+
+All the robots in a warehouse are coordinated from PupHub, the fleet dashboard.
+PupHub assigns jobs, balances battery levels across the fleet, and produces a
+daily report with pallets moved, kilometres driven, and near-stop events. It runs
+on a small server inside the warehouse, and it keeps working if the internet
+connection goes down.
+
+Acme runs a two-day training course called the Acme Academy for warehouse staff.
+The first day covers daily operation and the emergency procedures; the second day
+covers reading PupHub reports and swapping a battery. Every support contract
+includes two Academy seats per year.
+
+A Pallet Pup operates in temperatures from minus 5 to 40 degrees Celsius and is
+rated IP54 against dust and splashing water. It is not designed for freezer
+warehouses; Acme has announced a cold-store version, the Pallet Pup Arctic, for
+2027.
+
+A Pallet Pup is sold with a two-year warranty that covers parts and labour.
+Batteries are treated as a consumable and are covered separately for twelve
+months. Acme offers a support contract that adds next-business-day on-site repair.
+
+The list price of a single Pallet Pup is 18,900 euros. Fleets of ten or more
+receive a volume discount, and the support contract is priced per robot per year.
+The Shelf Owl costs 6,400 euros, and the Nest charging dock costs 2,100 euros.
+
+Every Pallet Pup ships with an emergency stop that any nearby worker can press,
+and the robot is certified to the European machinery safety standard for
+collaborative mobile robots. It slows automatically when a person is detected
+within two metres.

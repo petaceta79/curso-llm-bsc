@@ -1,0 +1,15 @@
+[project]
+name = "simple-dynamic-rag"
+version = "0.1.0"
+description = "Simple dynamic RAG: ingest (markitdown -> static/ -> chunk -> insert) + query (user input -> top-K over threshold -> template)"
+license = "CC-BY-NC-SA-4.0"
+requires-python = ">=3.10"
+dependencies = [
+    "collections-manager",
+    "markitdown==0.1.6",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.uv.sources]
+collections-manager = { path = "../collections-manager", editable = true }
